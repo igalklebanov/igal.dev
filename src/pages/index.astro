@@ -1,0 +1,46 @@
+---
+import Page from '../layouts/Page.astro';
+import PageOutro from '../components/PageOutro.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/igal-sunglasses.png';
+import KyselyExperience from '../components/KyselyExperience.astro';
+import ZodExperience from '../components/ZodExperience.astro';
+import PrismaDevExperience from '../components/PrismaDevExperience.astro';
+import StudioExperience from '../components/StudioExperience.astro';
+---
+
+<Page>
+  <main id="main">
+    <div class="profile">
+    <section class="intro" aria-labelledby="intro-heading">
+      <div class="profile-portrait">
+        <Image src={portrait} alt="Igal wearing sunglasses." width={480} widths={[240, 480, 720]} sizes="(max-width: 760px) 280px, (max-width: 1000px) 240px, 280px" format="webp" quality={85} loading="eager" fetchpriority="high" />
+      </div>
+      <h1 id="intro-heading">Igal Klebanov</h1>
+      <p>Senior Software Engineer in Tel Aviv. I co-lead <a href="https://kysely.dev" target="_blank" rel="noopener noreferrer">Kysely</a> and work on TypeScript and database tooling in my free time.</p>
+    </section>
+      <footer id="elsewhere" class="site-footer">
+        <nav aria-label="Find me elsewhere">
+          <ul class="social-links">
+            <li><a href="mailto:me@igal.dev">me@igal.dev</a></li>
+            <li><a href="https://github.com/igalklebanov" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://bsky.app/profile/igal.dev" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+            <li><a href="https://x.com/igalklebanov" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/igal-klebanov/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+
+    <section id="work" class="work" aria-labelledby="work-heading">
+      <h2 id="work-heading">Open source</h2>
+      <ul class="project-list">
+        <li class="project"><span class="project-number" aria-hidden="true">01</span><div class="project-body"><KyselyExperience /></div></li>
+        <li class="project"><span class="project-number" aria-hidden="true">02</span><div class="project-body"><ZodExperience /></div></li>
+        <li class="project"><span class="project-number" aria-hidden="true">03</span><div class="project-body"><PrismaDevExperience /></div></li>
+        <li class="project"><span class="project-number" aria-hidden="true">04</span><div class="project-body"><StudioExperience /></div></li>
+      </ul>
+    </section>
+  </main>
+  <PageOutro />
+</Page>

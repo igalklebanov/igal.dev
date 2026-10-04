@@ -1,0 +1,23 @@
+---
+import ExperienceTimeline from './ExperienceTimeline.astro';
+
+const roles = [
+  {
+    name: 'Author',
+    start: '2025-05',
+    startLabel: 'May 2025',
+    end: '2026-02',
+    endLabel: 'Feb 2026',
+    description: 'Built the local Prisma Postgres development experience.',
+    source: 'https://npmx.dev/package-code/@prisma/dev/v/0.25.2/package.json#L6',
+    evidence: 'Authorship: @prisma/dev 0.25.2 package.json, line 6.',
+  },
+];
+---
+
+<div class="project-heading">
+  <h3><a href="https://www.npmjs.com/package/@prisma/dev" target="_blank" rel="noopener noreferrer">Prisma Dev <span aria-hidden="true">↗</span></a></h3>
+</div>
+<p>Local Prisma Postgres for development.</p>
+
+<ExperienceTimeline entries={roles} label="Roles on Prisma Dev" />

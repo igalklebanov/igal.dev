@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+import introFont from '../assets/source-serif-regular.woff2?url';
+import ThemeControl from '../components/ThemeControl.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Igal Klebanov <3',
+  description = 'Senior Software Engineer in Tel Aviv. Kysely, TypeScript, and database tooling.',
+} = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
+    <script is:inline>
+      (() => {
+        const key = 'igal.dev.theme';
+        const system = window.matchMedia('(prefers-color-scheme: dark)');
+        const normalize = (value) => value === 'light' || value === 'dark' ? value : 'system';
+        let preference = 'system';
+
+        try { preference = normalize(localStorage.getItem(key)); } catch {}
+
+        const isDark = () => preference === 'dark' || (preference === 'system' && system.matches);
+
+        function apply() {
+          document.documentElement.dataset.theme = preference;
+          const dark = isDark();
+          document.querySelector('meta[name="theme-color"]').content = dark ? '#141414' : '#ffffff';
+          const control = document.querySelector('.theme-control');
+          if (!control) return;
+          control.dataset.dark = String(dark);
+          const systemButton = control.querySelector('#theme-system');
+          const followsSystem = preference === 'system';
+          systemButton.setAttribute('aria-pressed', String(followsSystem));
+          systemButton.title = `Match system preferences ${followsSystem ? 'enabled' : 'disabled'}, click to ${followsSystem ? 'disable' : 'enable'}`;
+          const toggle = control.querySelector('#theme-switch');
+          toggle.setAttribute('aria-checked', String(dark));
+          toggle.title = `${dark ? 'Dark' : 'Light'} mode, click to change`;
+        }
+
+        function choose(value) {
+          preference = value;
+          apply();
+          try {
+            if (preference === 'system') localStorage.removeItem(key);
+            else localStorage.setItem(key, preference);
+          } catch {}
+        }
+
+        apply();
+        system.addEventListener('change', apply);
+        window.addEventListener('storage', (event) => {
+          if (event.key !== key && event.key !== null) return;
+          preference = normalize(event.newValue);
+          apply();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const control = document.querySelector('.theme-control');
+          apply();
+          control.hidden = false;
+          // Paint the restored state before enabling user-facing transitions.
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            control.dataset.ready = 'true';
+          }));
+          control.querySelector('#theme-system').addEventListener('click', () => {
+            choose(preference === 'system' ? (isDark() ? 'dark' : 'light') : 'system');
+          });
+          control.querySelector('#theme-switch').addEventListener('click', () => {
+            choose(isDark() ? 'light' : 'dark');
+          });
+        }, { once: true });
+      })();
+    </script>
+    <link rel="preload" href={introFont} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <title>{title}</title>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-name" href={Astro.url.pathname.replace(/\/?$/, "/") === base ? "#top" : base}><img src={`${base}wordmark.svg`} width="140" height="42" alt="igal.dev" /></a>
+        <div class="header-actions">
+          <nav aria-label="Main navigation">
+            <a href={`${base}#work`}>Open source</a>
+            <a href={`${base}#elsewhere`}>Links</a>
+          </nav>
+          <ThemeControl />
+        </div>
+      </header>
+      <slot />
+
+    </div>
+  </body>
+</html>

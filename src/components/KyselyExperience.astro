@@ -1,0 +1,74 @@
+---
+import ExperienceTimeline from './ExperienceTimeline.astro';
+
+// Role boundaries follow Igal's chosen milestones. These are month-level
+// historical markers, not independently verified appointment dates.
+// In particular, #213 establishes an in-repository branch by November 1;
+// GitHub's PR metadata does not expose the branch's creation timestamp.
+const roles = [
+  {
+    name: 'Co-lead',
+    start: '2025-04',
+    startLabel: 'Apr 2025',
+    end: null,
+    endLabel: 'present',
+    description: 'Project direction, API design, reviews, and community support.',
+    source: 'https://github.com/kysely-org/kysely/pull/1414',
+    evidence: 'Listed as a project lead in the README; merged April 6, 2025.',
+  },
+  {
+    name: 'Member',
+    start: '2023-03',
+    startLabel: 'Mar 2023',
+    end: '2025-04',
+    endLabel: 'Apr 2025',
+    description: 'Shaping process and building the first-party ecosystem around Kysely.',
+    source: 'https://github.com/kysely-org',
+    evidence: 'kysely-org was created on March 25, 2023. Igal identifies its creation as the start of his membership.',
+  },
+  {
+    name: 'Collaborator',
+    start: '2022-09',
+    startLabel: 'Sep 2022',
+    end: '2023-03',
+    endLabel: 'Mar 2023',
+    description: 'Actively involved in the community and discussing design decisions with Sami, the author.',
+    source: 'https://github.com/kysely-org/kysely/commit/5c33f5139f3ea1b6b9c68adf0fc2b471be950c35',
+    evidence: 'Added to package.json on September 8, 2022 (Israel time); merged in #153 on September 10. First PR from a branch inside Kysely: #213, November 1, 2022.',
+  },
+  {
+    name: 'Contributor',
+    start: '2022-07',
+    startLabel: 'Jul 2022',
+    end: '2022-09',
+    endLabel: 'Sep 2022',
+    description: 'First merged contribution: REPLACE INTO support.',
+    source: 'https://github.com/kysely-org/kysely/pull/116',
+    evidence: 'First merged PR: db.replaceInto(table), July 18, 2022.',
+  },
+];
+---
+
+<div class="project-heading">
+  <h3><a href="https://kysely.dev" target="_blank" rel="noopener noreferrer">Kysely <span aria-hidden="true">↗</span></a></h3>
+</div>
+<p>A type-safe SQL query builder for TypeScript.</p>
+<p>What a ride! we made it to 20M+ downloads per week on npm and 14k+ github stars.</p>
+
+<ExperienceTimeline entries={roles} label="Roles at Kysely, most recent first" />
+
+<p class="contributions">
+  My contributions include <a href="https://github.com/kysely-org/kysely/pull/595" target="_blank" rel="noopener noreferrer">SQL Server support</a>,{' '}
+  <a href="https://github.com/kysely-org/kysely/pull/153" target="_blank" rel="noopener noreferrer">window functions</a>,{' '}
+  <a href="https://github.com/kysely-org/kysely/pull/440" target="_blank" rel="noopener noreferrer">type-safe JSON traversal</a>,{' '}
+  <a href="https://github.com/kysely-org/kysely/pull/700" target="_blank" rel="noopener noreferrer">MERGE queries</a>,{' '}
+  <a href="https://github.com/kysely-org/kysely/pull/962" target="_blank" rel="noopener noreferrer">controlled transactions and savepoints</a>,{' '}
+  <a href="https://github.com/kysely-org/kysely/pull/1796" target="_blank" rel="noopener noreferrer">query cancellation</a>,{' '}
+  <a href="https://github.com/kysely-org/kysely-ctl" target="_blank" rel="noopener noreferrer">kysely-ctl</a>,{' '}
+  and <a href="https://github.com/kysely-org/kysely-postgres-js" target="_blank" rel="noopener noreferrer">kysely-postgres-js</a>.
+</p>
+
+<style>
+  p.contributions { margin-top: 26px; }
+  .contributions a { color: var(--accent); }
+</style>

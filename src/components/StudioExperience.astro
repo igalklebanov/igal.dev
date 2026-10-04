@@ -1,0 +1,23 @@
+---
+import ExperienceTimeline from './ExperienceTimeline.astro';
+
+const roles = [
+  {
+    name: 'Author and lead',
+    start: '2025-03',
+    startLabel: 'Mar 2025',
+    end: '2026-02',
+    endLabel: 'Feb 2026',
+    description: 'Created the embeddable core of Prisma Studio.',
+    source: 'https://npmx.dev/package-code/@prisma/studio-core/v/0.27.0/package.json#L121-L131',
+    evidence: 'Authorship: @prisma/studio-core 0.27.0 package.json, lines 121–131.',
+  },
+];
+---
+
+<div class="project-heading">
+  <h3><a href="https://github.com/prisma/studio" target="_blank" rel="noopener noreferrer">@prisma/studio-core <span aria-hidden="true">↗</span></a></h3>
+</div>
+<p>An embeddable database editor for exploring schemas, browsing data, and editing rows.</p>
+
+<ExperienceTimeline entries={roles} label="Roles on Prisma Studio" />

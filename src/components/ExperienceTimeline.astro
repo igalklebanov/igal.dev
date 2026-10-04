@@ -1,0 +1,46 @@
+---
+interface Entry {
+  name: string;
+  start?: string;
+  startLabel: string;
+  end?: string | null;
+  endLabel?: string;
+  description: string;
+  source?: string;
+  evidence?: string;
+}
+interface Props {
+  entries: Entry[];
+  label: string;
+}
+const { entries, label } = Astro.props;
+---
+
+<ol class="role-history" aria-label={label}>
+  {entries.map((role) => (
+    <li class="role-entry">
+      <div class="role-heading">
+        <h4>{role.source ? <a href={role.source} target="_blank" rel="noopener noreferrer" title={role.evidence}>{role.name} <span aria-hidden="true">↗</span></a> : role.name}</h4>
+        <span class="role-period">
+          {role.start ? <time datetime={role.start}>{role.startLabel}</time> : role.startLabel}{role.endLabel && <> – {role.end ? <time datetime={role.end}>{role.endLabel}</time> : role.endLabel}</>}
+        </span>
+      </div>
+      <p>{role.description}</p>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .role-history { margin: 23px 0 3px 3px; padding: 0; list-style: none; }
+  .role-entry { position: relative; padding: 0 0 23px 23px; }
+  .role-entry:last-child { padding-bottom: 0; }
+  .role-entry:not(:last-child)::after { content: ''; position: absolute; left: 0; top: 8.5px; bottom: -8.5px; width: 1px; background: var(--line); }
+  .role-entry::before { content: ''; position: absolute; left: -2px; top: 6px; width: 5px; height: 5px; border-radius: 50%; background: var(--muted); z-index: 1; }
+  .role-entry:first-child::before { background: var(--accent); }
+  .role-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 3px 16px; }
+  h4 { margin: 0; font-family: var(--sans); font-size: 13px; line-height: 1.5; font-weight: 600; }
+  h4 a { text-decoration: none; }
+  h4 a span { margin-left: 3px; color: var(--muted); font-size: 11px; }
+  .role-period { font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 12px; line-height: 1.6; color: var(--muted); }
+  .role-entry p { margin-top: 4px; font-size: 14px; line-height: 1.65; }
+</style>

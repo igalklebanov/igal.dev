@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/igal-footer.png';
+---
+
+<footer class="page-outro">
+  <figure>
+    <Image src={portrait} alt="Igal leaning forward in a chair, holding his phone." width={440} widths={[220, 440, 660]} sizes="(max-width: 760px) 180px, 220px" format="webp" quality={85} loading="lazy" />
+    <figcaption>wtf you still here??</figcaption>
+  </figure>
+</footer>
+
+<style>
+  .page-outro { padding: 24px 0 64px; }
+  figure { display: flex; flex-direction: column; align-items: center; gap: 14px; margin: 0; }
+  img { display: block; width: 220px; max-width: 100%; height: auto; }
+  figcaption { padding: 5px 12px 7px; color: #171916; background: var(--signal); font-size: 22px; font-weight: 750; line-height: 1.2; letter-spacing: -.7px; transform: rotate(-3deg); }
+  figcaption::selection { color: var(--signal); background: #171916; }
+  @media (max-width: 760px) {
+    .page-outro { padding: 16px 0 48px; }
+    img { width: 180px; }
+    figcaption { font-size: 20px; }
+  }
+</style>

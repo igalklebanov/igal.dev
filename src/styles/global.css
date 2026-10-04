@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'Source Serif';
+  src: url('../assets/source-serif-regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --ink: #181818;
+  --muted: #606060;
+  --accent: #426400;
+  --line: #d9d9d9;
+  --signal: #d3f65a;
+  --dark-paper: #141414;
+  --dark-ink: #eeeeee;
+  --dark-muted: #a3a3a3;
+  --dark-accent: #d3f65a;
+  --dark-line: #353535;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: var(--dark-paper);
+  --ink: var(--dark-ink);
+  --muted: var(--dark-muted);
+  --accent: var(--dark-accent);
+  --line: var(--dark-line);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: var(--dark-paper);
+    --ink: var(--dark-ink);
+    --muted: var(--dark-muted);
+    --accent: var(--dark-accent);
+    --line: var(--dark-line);
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+::selection { color: #171916; background: var(--signal); }
+.intro::selection, .intro ::selection { color: var(--signal); background: #171916; }
+[id] { scroll-margin-top: 32px; }
+
+.page { width: min(100% - 80px, 1120px); margin-inline: auto; }
+.skip-link { position: absolute; z-index: 10; left: 24px; top: -80px; padding: 12px; background: var(--ink); color: var(--paper); }
+.skip-link:focus { top: 12px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 26px; }
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.site-name { display: inline-flex; align-items: center; flex-shrink: 0; text-decoration: none; }
+.site-name img { display: block; width: 140px; height: 42px; }
+.site-header nav { display: flex; gap: 24px; color: var(--muted); font-size: 13px; }
+.site-header nav a { text-decoration: none; }
+
+main { display: grid; grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 64px; padding-block: 48px 80px; }
+.profile { position: sticky; top: 32px; }
+.intro { position: relative; margin-top: 32px; padding: 0 26px 30px; color: #171916; background: var(--signal); }
+.profile-portrait { display: block; height: 218px; margin: -32px -26px 22px; overflow: hidden; }
+.profile-portrait img { display: block; width: 100%; height: auto; }
+h1 { font-size: 27px; line-height: 1.12; letter-spacing: -1.1px; font-weight: 750; }
+.intro p { margin-top: 20px; font-family: 'Source Serif', Georgia, serif; font-size: 19px; line-height: 1.55; }
+.intro p a { text-decoration-thickness: 1.5px; }
+.intro a:hover { color: #171916; text-decoration-thickness: 3px; }
+.intro a:focus-visible { outline-color: #171916; }
+
+.work { min-width: 0; }
+h2 { margin-top: 2px; padding-bottom: 19px; font-size: 12px; line-height: 1.5; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.project { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 18px; padding-block: 28px 32px; border-top: 1px solid var(--line); }
+.project:first-child { border-top-color: var(--ink); }
+.project-number { font-size: 40px; font-weight: 300; letter-spacing: -3px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
+.project-body { min-width: 0; }
+.project-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; }
+h3 { font-size: 27px; line-height: 1.25; letter-spacing: -.8px; font-weight: 700; overflow-wrap: anywhere; }
+h3 a { text-decoration: none; }
+h3 a span { display: inline-block; margin-left: 5px; color: var(--accent); font-size: 17px; font-weight: 400; }
+.project p { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.project p.contributions { border-left: 2px solid var(--signal); padding-left: 14px; }
+
+.site-footer { margin-top: 28px; padding-inline: 2px; }
+.social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 20px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.social-links li:first-child { grid-column: 1 / -1; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink); }
+.social-links a { text-decoration: none; }
+.social-links a:hover { text-decoration: underline; }
+
+@media (max-width: 1000px) {
+  .page { width: calc(100% - 48px); }
+  main { grid-template-columns: 240px minmax(0, 1fr); gap: 36px; }
+  .intro { padding: 0 22px 26px; }
+  .profile-portrait { height: 185px; margin-inline: -22px; }
+  h1 { font-size: 25px; }
+  .project { grid-template-columns: 38px minmax(0, 1fr); gap: 12px; }
+  .project-number { font-size: 30px; letter-spacing: -2px; }
+  h3 { font-size: 24px; }
+}
+@media (max-width: 760px) {
+  .page { width: calc(100% - 40px); }
+  .site-header { padding-block: 18px; gap: 12px; }
+  .site-name img { width: 112px; height: auto; }
+  .header-actions { gap: 16px; }
+  .site-header nav { gap: 14px; font-size: 12px; }
+  main { grid-template-columns: minmax(0, 1fr); gap: 42px; padding-block: 28px 48px; }
+  .profile { position: static; }
+  .intro { margin-top: 22px; padding: 0 26px 26px; }
+  .profile-portrait { width: min(100%, 280px); height: auto; aspect-ratio: 280 / 218; margin: -22px auto 22px; }
+  h1 { padding-top: 4px; font-size: 27px; }
+  .intro p { max-width: 520px; margin-top: 17px; font-size: 19px; }
+  .site-footer { margin-top: 20px; }
+  .social-links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+  .social-links li:first-child { flex-basis: 100%; padding-bottom: 10px; }
+  .project { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding-block: 25px 28px; }
+  .project-number { font-size: 25px; letter-spacing: -1.5px; }
+  h3 { font-size: 23px; }
+}
+@media (max-width: 360px) {
+  .header-actions { gap: 10px; }
+  .site-header nav { gap: 10px; font-size: 11px; }
+  .site-name img { width: 96px; }
+  .intro { padding: 0 22px 22px; }
+  h1 { font-size: 24px; }
+}
+
+@media (min-width: 761px) and (max-height: 740px) {
+  .profile { position: static; }
+}

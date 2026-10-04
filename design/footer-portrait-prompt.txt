@@ -1,0 +1,6 @@
+Use case: background-extraction.
+Asset type: transparent photo cutout for a personal website footer.
+Input image: edit target, a candid outdoor meetup photo.
+Primary request: isolate ONLY the man seated in the FRONT CENTER, leaning forward with elbows near his knees, holding a phone, wearing a black/navy T-shirt with a small bright LIME CIRCLE logo on his chest and olive trousers. His head is around x440 y185 in the 922x692 input, his body extends down to around y530. He is NOT the arms-up man at the far back left.
+Keep this exact man's face, short hair, gaze toward the left, expression, clothes, lime shirt emblem, hands, phone, forward-leaning seated pose, trousers, and visible shoes. Retain just the portion of the pale plastic chair supporting him if needed for the seated silhouette. Remove all other people, their limbs, other chairs, bags, table, floor and entire background. Do not change his identity, put sunglasses on him, turn him toward camera, beautify or stylize him.
+Composition: compact full seated figure on a genuinely transparent RGBA background, cropped close with modest transparent padding. Preserve the photographic texture and original lighting; lightly clean cutout edges. Reconstruct only small occluded silhouette areas necessary to separate him from adjacent people. No text, captions, watermark, sticker border, shadow or solid background.

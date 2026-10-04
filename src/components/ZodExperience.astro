@@ -1,0 +1,35 @@
+---
+import ExperienceTimeline from './ExperienceTimeline.astro';
+
+// The first contribution date is verified from merged PRs.
+const roles = [
+  {
+    name: 'Contributor',
+    start: '2022-11',
+    startLabel: 'Nov 2022',
+    end: null,
+    endLabel: 'present',
+    description: 'First merged contribution: typed fatal issues.',
+    source: 'https://github.com/colinhacks/zod/pull/1555',
+    evidence: 'First merged PR: #1555, November 14, 2022 at 01:15 UTC.',
+  },
+];
+---
+
+<div class="project-heading">
+  <h3><a href="https://zod.dev" target="_blank" rel="noopener noreferrer">Zod <span aria-hidden="true">↗</span></a></h3>
+</div>
+<p>Schema validation with static type inference.</p>
+
+<ExperienceTimeline entries={roles} label="Roles at Zod, most recent first" />
+
+<p class="contributions">
+  My contributions include <a href="https://github.com/colinhacks/zod/pull/1786" target="_blank" rel="noopener noreferrer">template literal validation</a>,{' '}
+  <a href="https://github.com/colinhacks/zod/pull/1766" target="_blank" rel="noopener noreferrer">date and time checks</a>,{' '}
+  and <a href="https://github.com/colinhacks/zod/pull/1711" target="_blank" rel="noopener noreferrer">BigInt validation</a>.
+</p>
+
+<style>
+  p.contributions { margin-top: 26px; }
+  .contributions a { color: var(--accent); }
+</style>
