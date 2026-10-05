@@ -6,10 +6,12 @@
     aria-label="Match system preferences"
     aria-pressed="true"
   >
+    <span class="system-face">
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <rect height="13" rx="2" width="18" x="3" y="4" />
       <path d="M8 21h8M12 17v4" />
     </svg>
+    </span>
   </button>
   <button
     id="theme-switch"
@@ -19,6 +21,7 @@
     aria-label="Dark mode"
     aria-checked="false"
   >
+    <span class="track-face">
     <span class="thumb">
       <svg class="sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <circle cx="12" cy="12" r="4" />
@@ -28,6 +31,7 @@
         <path d="M20.5 14.1A8.8 8.8 0 0 1 9.9 3.5a8.9 8.9 0 1 0 10.6 10.6Z" />
       </svg>
     </span>
+    </span>
   </button>
 </div>
 
@@ -35,41 +39,56 @@
   .theme-control {
     --track: #e9e9e9;
     --thumb: #fff;
+    position: relative;
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    width: 60px;
     min-height: 32px;
   }
   .theme-control[hidden] { display: flex; visibility: hidden; }
   .theme-control[data-dark='true'] { --track: #333333; --thumb: #141414; }
+  /* Separate hit areas around the original 60 × 22px artwork. */
   button {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    height: 44px;
+    transform: translateY(-50%);
     padding: 0;
-    border: 1px solid var(--line);
-    background: var(--track);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     color: var(--muted);
     cursor: pointer;
+  }
+  button:focus-visible { outline-offset: 2px; }
+  .system-button { left: -4px; width: 24px; z-index: 1; }
+  .track { left: 20px; width: 44px; z-index: 2; }
+  .system-face, .track-face {
+    position: absolute;
+    top: 11px;
+    height: 22px;
+    border: 1px solid var(--line);
+    background: var(--track);
+    pointer-events: none;
     transition: background-color .25s ease, border-color .25s ease, opacity .25s ease;
   }
-  button:hover { border-color: var(--muted); }
-  button:focus-visible { z-index: 3; }
-  .system-button {
+  button:hover .system-face, button:hover .track-face { border-color: var(--muted); }
+  .system-face {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    left: 4px;
     width: 42px;
-    height: 22px;
-    margin-right: -22px;
     padding-left: 5px;
     border-right: none;
     border-radius: 11px 0 0 11px;
     opacity: .55;
-    z-index: 1;
   }
-  .system-button:hover { opacity: 1; }
-  .system-button[aria-pressed='true'] { background: var(--thumb); color: var(--ink); opacity: 1; }
+  .system-button:hover .system-face { opacity: 1; }
+  .system-button[aria-pressed='true'] .system-face { background: var(--thumb); color: var(--ink); opacity: 1; }
   .system-button svg { width: 10px; height: 10px; }
-  .track { width: 40px; height: 22px; border-radius: 11px; z-index: 2; }
+  .track-face { left: 0; width: 40px; border-radius: 11px; }
   .thumb {
     display: flex;
     align-items: center;
@@ -91,10 +110,11 @@
   .moon { opacity: 0; }
   .track[aria-checked='true'] .sun { opacity: 0; }
   .track[aria-checked='true'] .moon { opacity: 1; }
-  .theme-control:not([data-ready]) button,
+  .theme-control:not([data-ready]) .system-face,
+  .theme-control:not([data-ready]) .track-face,
   .theme-control:not([data-ready]) .thumb,
   .theme-control:not([data-ready]) .thumb svg { transition: none; }
   @media (prefers-reduced-motion: reduce) {
-    button, .thumb, .thumb svg { transition: none; }
+    .system-face, .track-face, .thumb, .thumb svg { transition: none; }
   }
 </style>
