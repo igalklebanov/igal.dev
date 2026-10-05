@@ -91,12 +91,6 @@ h3 a span { display: inline-block; margin-left: 5px; color: var(--accent); font-
 .project p { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
 .project p.contributions { border-left: 2px solid var(--signal); padding-left: 14px; }
 
-.site-footer { margin-top: 28px; padding-inline: 2px; }
-.social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 20px; font-size: 13px; line-height: 1.6; color: var(--muted); }
-.social-links li:first-child { grid-column: 1 / -1; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink); }
-.social-links a { text-decoration: none; }
-.social-links a:hover { text-decoration: underline; }
-
 @media (max-width: 1000px) {
   .page { width: calc(100% - 48px); }
   main { grid-template-columns: 240px minmax(0, 1fr); gap: 36px; }
@@ -119,9 +113,6 @@ h3 a span { display: inline-block; margin-left: 5px; color: var(--accent); font-
   .profile-portrait { width: min(100%, 280px); height: auto; aspect-ratio: 280 / 218; margin: -22px auto 22px; }
   h1 { padding-top: 4px; font-size: 27px; }
   .intro p { max-width: 520px; margin-top: 17px; font-size: 19px; }
-  .site-footer { margin-top: 20px; }
-  .social-links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-  .social-links li:first-child { flex-basis: 100%; padding-bottom: 10px; }
   .project { grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding-block: 25px 28px; }
   .project-number { font-size: 25px; letter-spacing: -1.5px; }
   h3 { font-size: 23px; }

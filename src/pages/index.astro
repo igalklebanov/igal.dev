@@ -1,6 +1,7 @@
 ---
 import Page from '../layouts/Page.astro';
 import PageOutro from '../components/PageOutro.astro';
+import ProfileLinks from '../components/ProfileLinks.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/igal-sunglasses.png';
 import KyselyExperience from '../components/KyselyExperience.astro';
@@ -19,18 +20,8 @@ import OpenTofuExperience from '../components/OpenTofuExperience.astro';
       </div>
       <h1 id="intro-heading">Igal Klebanov</h1>
       <p>Senior Software Engineer in Tel Aviv. I co-lead <a href="https://kysely.dev" target="_blank" rel="noopener noreferrer">Kysely</a> and work on TypeScript and database tooling in my free time.</p>
+      <ProfileLinks />
     </section>
-      <footer id="elsewhere" class="site-footer">
-        <nav aria-label="Find me elsewhere">
-          <ul class="social-links">
-            <li><a href="mailto:me@igal.dev">me@igal.dev</a></li>
-            <li><a href="https://github.com/igalklebanov" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://bsky.app/profile/igal.dev" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
-            <li><a href="https://x.com/igalklebanov" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/igal-klebanov/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          </ul>
-        </nav>
-      </footer>
     </div>
 
     <section id="work" class="work" aria-labelledby="work-heading">

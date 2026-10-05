@@ -147,3 +147,10 @@ The [public naming discussion](https://github.com/opentofu/opentofu/issues/296)
 and [renaming issue](https://github.com/opentofu/opentofu/issues/451) establish
 the naming period, not authorship. The role is intentionally unlinked until
 a direct credit or original proposal link is available.
+
+## Profile contact icons
+
+`src/components/ProfileLinks.astro` renders the contact links inside the profile
+card footer as inline SVGs. Each link has an accessible name and a hover label.
+Brand glyphs come from Simple Icons (CC0), including LinkedIn from v13.0.0;
+the envelope comes from Lucide (ISC). Notices are in `public/icons/LICENSE.txt`.
