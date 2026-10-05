@@ -1,0 +1,19 @@
+---
+import ExperienceTimeline from './ExperienceTimeline.astro';
+
+const roles = [
+  {
+    name: 'Namegiver',
+    start: '2023',
+    startLabel: '2023',
+    description: 'Coined “Tofu,” the name that became OpenTofu.',
+  },
+];
+---
+
+<div class="project-heading">
+  <h3><a href="https://opentofu.org" target="_blank" rel="noopener noreferrer">OpenTofu <span aria-hidden="true">↗</span></a></h3>
+</div>
+<p>An open-source infrastructure-as-code tool.</p>
+
+<ExperienceTimeline entries={roles} label="Naming contribution to OpenTofu" />

@@ -138,3 +138,12 @@ To connect `igal.dev`, set it as the custom domain in GitHub Pages settings and
 point the Cloudflare apex record (`@`) to `igalklebanov.github.io` with a flattened
 CNAME, DNS only. Preserve existing MX and TXT records. Enable HTTPS in Pages
 once its certificate is ready, then rerun the deployment workflow.
+
+## OpenTofu naming contribution
+
+Igal identifies his role as Namegiver: he coined "Tofu," which became OpenTofu.
+The entry uses year precision (2023); the exact proposal date is not established.
+The [public naming discussion](https://github.com/opentofu/opentofu/issues/296)
+and [renaming issue](https://github.com/opentofu/opentofu/issues/451) establish
+the naming period, not authorship. The role is intentionally unlinked until
+a direct credit or original proposal link is available.
