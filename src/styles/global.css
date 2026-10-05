@@ -11,13 +11,13 @@
   --paper: #ffffff;
   --ink: #181818;
   --muted: #606060;
-  --accent: #426400;
+  --accent: #a63b12;
   --line: #d9d9d9;
-  --signal: #d3f65a;
+  --signal: #ff824a;
   --dark-paper: #141414;
   --dark-ink: #eeeeee;
   --dark-muted: #a3a3a3;
-  --dark-accent: #d3f65a;
+  --dark-accent: #ff9e73;
   --dark-line: #353535;
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-family: var(--sans);
@@ -53,8 +53,8 @@ ul { padding: 0; list-style: none; }
 a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 a:hover { color: var(--accent); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
-::selection { color: #171916; background: var(--signal); }
-.intro::selection, .intro ::selection { color: var(--signal); background: #171916; }
+::selection { color: #211713; background: var(--signal); }
+.intro::selection, .intro ::selection { color: var(--signal); background: #211713; }
 [id] { scroll-margin-top: 32px; }
 
 .page { width: min(100% - 80px, 1120px); margin-inline: auto; }
@@ -69,14 +69,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 main { display: grid; grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 64px; padding-block: 48px 80px; }
 .profile { position: sticky; top: 32px; }
-.intro { position: relative; margin-top: 32px; padding: 0 26px 30px; color: #171916; background: var(--signal); }
+.intro { position: relative; margin-top: 32px; padding: 0 26px 30px; color: #211713; background: var(--signal); }
 .profile-portrait { display: block; height: 218px; margin: -32px -26px 22px; overflow: hidden; }
 .profile-portrait img { display: block; width: 100%; height: auto; }
 h1 { font-size: 27px; line-height: 1.12; letter-spacing: -1.1px; font-weight: 750; }
 .intro p { margin-top: 20px; font-family: 'Source Serif', Georgia, serif; font-size: 19px; line-height: 1.55; }
 .intro p a { text-decoration-thickness: 1.5px; }
-.intro a:hover { color: #171916; text-decoration-thickness: 3px; }
-.intro a:focus-visible { outline-color: #171916; }
+.intro a:hover { color: #211713; text-decoration-thickness: 3px; }
+.intro a:focus-visible { outline-color: #211713; }
 
 .work { min-width: 0; }
 h2 { margin-top: 2px; padding-bottom: 19px; font-size: 12px; line-height: 1.5; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }

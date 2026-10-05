@@ -3,7 +3,7 @@
 A first design draft of Igal Klebanov's personal site. Astro generates static
 HTML and CSS, with a small inline theme script. A sticky profile column and
 numbered project sections form the desktop layout; mobile stacks them vertically.
-The lime profile panel contrasts with white or charcoal project sections.
+The tangerine profile panel contrasts with white or charcoal project sections.
 System sans-serif handles labels and project text, with locally served Source
 Serif 4 for the introduction. Its license is in `public/fonts/source-serif-LICENSE.md`.
 Font source: https://github.com/adobe-fonts/source-serif.

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 84" fill="none">
   <title>igal.dev</title>
-  <rect width="280" height="84" rx="6" fill="#d3f65a"/>
-  <g stroke="#171916" stroke-width="8" stroke-linecap="square" stroke-linejoin="round">
+  <rect width="280" height="84" rx="6" fill="#ff824a"/>
+  <g stroke="#211713" stroke-width="8" stroke-linecap="square" stroke-linejoin="round">
     <path d="M22 34v20"/>
     <path d="M62 44a12 12 0 1 1-24 0 12 12 0 0 1 24 0Zm0-10v29c0 7-4 10-11 10h-8"/>
     <path d="M97 44a12 12 0 1 1-24 0 12 12 0 0 1 24 0Zm0-10v20"/>
@@ -10,6 +10,6 @@
     <path d="M213 53c-3 3-6 4-11 4-7 0-12-5-12-13s5-12 12-12 12 5 12 12h-23"/>
     <path d="m232 34 12 22 12-22"/>
   </g>
-  <path d="M17.5 15.5h9v9h-9z" fill="#171916"/>
-  <circle cx="133" cy="53" r="5" fill="#171916"/>
+  <path d="M17.5 15.5h9v9h-9z" fill="#211713"/>
+  <circle cx="133" cy="53" r="5" fill="#211713"/>
 </svg>
