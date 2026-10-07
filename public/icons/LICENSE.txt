@@ -18,3 +18,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Brand icons from Simple Icons (CC0): https://github.com/simple-icons/simple-icons
 LinkedIn glyph sourced from version 13.0.0.
+
+Cal.com icon: https://github.com/calcom/cal.diy/blob/main/apps/web/public/cal-com-icon.svg
+Brand guidelines: https://cal.com/brand
+Cal.com and Cal are registered trademarks of Cal.com, Inc. Used to identify the booking link.
