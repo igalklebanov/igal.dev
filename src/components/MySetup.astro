@@ -10,13 +10,13 @@ const tools = [
 ];
 const gear = [
   { name: '2 × ASUS VP249', detail: 'Monitors · 1080p · 144 Hz' },
-  { name: 'Durgod Taurus K320', detail: 'Keyboard' },
-  { name: 'Logitech MX518 Legendary', detail: 'Mouse' },
-  { name: 'Sennheiser HD 6XX', detail: 'Headphones' },
-  { name: 'Sony WF-1000XM6', detail: 'Earbuds' },
-  { name: 'Elgato Wave:3 MK.2', detail: 'Microphone' },
-  { name: 'Logitech C920', detail: 'Webcam' },
-  { name: 'Steelcase Amia', detail: 'Chair' },
+  { name: 'Durgod Taurus K320', detail: 'Keyboard', href: 'https://www.amazon.com/dp/B07QK16RDQ' },
+  { name: 'Logitech MX518 Legendary', detail: 'Mouse', href: 'https://www.amazon.com/dp/B07NDVF9V7' },
+  { name: 'Sennheiser HD 6XX', detail: 'Headphones', href: 'https://www.amazon.com/dp/B08T123MCT' },
+  { name: 'Sony WF-1000XM6', detail: 'Earbuds', href: 'https://www.amazon.com/dp/B0G6J6YNV9' },
+  { name: 'Elgato Wave:3 MK.2', detail: 'Microphone', href: 'https://www.amazon.com/dp/B0GGYLFHPS' },
+  { name: 'Logitech C920', detail: 'Webcam', href: 'https://www.amazon.com/dp/B006JH8T3S' },
+  { name: 'Steelcase Amia', detail: 'Chair', href: 'https://www.amazon.com/dp/B00GBUQ14M' },
 ];
 ---
 
@@ -50,9 +50,9 @@ const gear = [
   <div class="setup-group">
     <h3>Desk &amp; gear</h3>
     <dl>
-      {gear.map(({ name, detail }) => (
+      {gear.map(({ name, detail, href }) => (
         <div>
-          <dt>{name}</dt>
+          <dt>{href ? <a href={href} target="_blank" rel="noopener noreferrer">{name}</a> : name}</dt>
           <dd>{detail}</dd>
         </div>
       ))}
