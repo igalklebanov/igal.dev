@@ -72,8 +72,8 @@ const records = [
           src={cover}
           alt=""
           width={240}
-          widths={[160, 240, 360, 480, 600]}
-          sizes="(max-width: 760px) calc((100vw - 60px) / 2), (max-width: 1000px) calc((100vw - 344px) / 2), (max-width: 1200px) calc((100vw - 464px) / 3), 246px"
+          widths={[120, 180, 240, 360, 480, 600]}
+          sizes="(max-width: 360px) calc((100vw - 52px) / 2), (max-width: 560px) calc((100vw - 64px) / 3), (max-width: 760px) calc((100vw - 76px) / 4), (max-width: 1000px) calc((100vw - 348px) / 3), (max-width: 1200px) calc((100vw - 472px) / 4), 182px"
           format="webp"
           quality={80}
           loading="lazy"
@@ -87,11 +87,13 @@ const records = [
 
 <style>
   section { margin-top: 48px; }
-  .records { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 20px; padding-top: 28px; border-top: 1px solid var(--ink); }
+  .records { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 16px; padding-top: 28px; border-top: 1px solid var(--ink); }
   li { min-width: 0; }
   img { display: block; width: 100%; height: auto; aspect-ratio: 1; box-shadow: 0 2px 8px #0002; }
-  h3 { margin-top: 14px; font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.5; }
-  p { margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-  @media (max-width: 1000px) { .records { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 760px) { section { margin-top: 42px; } .records { padding-top: 25px; } }
+  h3 { margin-top: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0; line-height: 1.5; }
+  p { margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+  @media (max-width: 1000px) { .records { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; } }
+  @media (max-width: 760px) { section { margin-top: 42px; } .records { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-top: 25px; } }
+  @media (max-width: 560px) { .records { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 360px) { .records { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>

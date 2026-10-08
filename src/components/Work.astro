@@ -1,0 +1,21 @@
+<section id="career" class="career" aria-labelledby="career-heading">
+  <h2 id="career-heading">Work</h2>
+  <div class="work-copy">
+    <p>I've spent most of my career in small teams, building products while the shape of the problem was still changing. I like getting close to the people who understand that problem, then having room to think through the system and build it.</p>
+    <p>At <a href="https://www.finaloop.com/" target="_blank" rel="noopener noreferrer">Finaloop</a>, bank and marketplace data had to become accounting reports people could trust. I built event-driven and event-sourced pipelines, worked across different database models, and chased reconciliation gaps with accounting and fintech experts. It was distributed systems work with real business consequences, and some fixes had to ship under pressure.</p>
+    <p>At <a href="https://www.prisma.io/" target="_blank" rel="noopener noreferrer">Prisma</a>, the questions were about tools for other developers. On the experiments team, I worked on query performance insights tooling and a security product exploring bundling, RPC, and FaaS. Later, I worked on the internals of the new Studio and built <code>prisma dev</code>, a local development tool for Prisma Postgres. The work took me from persistence and APIs to SDKs, CLIs, and the occasional dashboard.</p>
+  </div>
+</section>
+
+<style>
+  .career { margin-top: 48px; }
+  .work-copy { border-top: 1px solid var(--ink); padding-top: 24px; }
+  p { max-width: 70ch; font-size: 15px; line-height: 1.8; color: var(--muted); }
+  p:first-child { color: var(--ink); }
+  a { text-decoration-color: var(--line); }
+  p + p { margin-top: 20px; }
+  code { font-size: .95em; }
+  @media (max-width: 760px) {
+    .career { margin-top: 42px; }
+  }
+</style>
