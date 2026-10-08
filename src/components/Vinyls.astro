@@ -60,7 +60,7 @@ const records = [
   { title: 'BUBBA', artist: 'KAYTRANADA', cover: bubba },
   { title: 'Lahai', artist: 'Sampha', cover: lahai },
   { title: '99.9%', artist: 'KAYTRANADA', cover: ninetyNinePointNine },
-];
+].sort((a, b) => a.artist.localeCompare(b.artist, 'en', { sensitivity: 'base' }));
 ---
 
 <section id="vinyls" aria-labelledby="vinyls-heading">
