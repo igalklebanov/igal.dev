@@ -1,0 +1,75 @@
+---
+const tools = [
+  { name: 'VS Code', role: 'Editor', href: 'https://code.visualstudio.com/' },
+  { name: 'Ghostty', role: 'Terminal', href: 'https://ghostty.org/' },
+  { name: 'Chrome', role: 'Browser', href: 'https://www.google.com/chrome/' },
+  { name: 'Herdr', role: 'Agent workspace', href: 'https://herdr.dev/' },
+  { name: 'Claude', role: 'AI', href: 'https://claude.ai/' },
+  { name: 'Codex', role: 'AI', href: 'https://openai.com/codex/' },
+];
+const gear = [
+  { name: '2 × ASUS VP249', detail: 'Monitors · 1080p · 144 Hz' },
+  { name: 'Durgod Taurus K320', detail: 'Keyboard' },
+  { name: 'Logitech MX518', detail: 'Mouse' },
+  { name: 'Sennheiser HD 6XX', detail: 'Headphones' },
+  { name: 'Sony WF-1000XM6', detail: 'Earbuds' },
+  { name: 'Elgato Wave:3 MK.2', detail: 'Microphone' },
+  { name: 'Logitech C920', detail: 'Webcam' },
+  { name: 'Steelcase', detail: 'Chair' },
+];
+---
+
+<section id="setup" aria-labelledby="setup-heading">
+  <h2 id="setup-heading">My setup</h2>
+  <div class="setup-group">
+    <h3>Devices</h3>
+    <dl>
+      <div>
+        <dt>MacBook Pro 14″ <span>2023</span></dt>
+        <dd>Apple M3 Pro · 18 GB memory · 512 GB SSD</dd>
+        <dd>11-core CPU · 14-core GPU</dd>
+      </div>
+      <div>
+        <dt>Samsung Galaxy S25 Ultra</dt>
+        <dd>Phone</dd>
+      </div>
+    </dl>
+  </div>
+  <div class="setup-group">
+    <h3>Developer tools</h3>
+    <dl>
+      {tools.map(({ name, role, href }) => (
+        <div>
+          <dt><a href={href} target="_blank" rel="noopener noreferrer">{name}</a></dt>
+          <dd>{role}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+  <div class="setup-group">
+    <h3>Desk &amp; gear</h3>
+    <dl>
+      {gear.map(({ name, detail }) => (
+        <div>
+          <dt>{name}</dt>
+          <dd>{detail}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  section { margin-top: 48px; }
+  .setup-group { border-top: 1px solid var(--line); padding-block: 28px; }
+  .setup-group:first-of-type { border-top-color: var(--ink); }
+  h3 { margin-bottom: 22px; }
+  dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 0; }
+  dt { font-size: 15px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+  dt span { margin-left: 6px; color: var(--muted); font-size: 12px; font-weight: 400; }
+  dt a { text-decoration-color: var(--line); }
+  dd { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  @media (min-width: 761px) and (max-width: 1000px) { dl { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) { section { margin-top: 42px; } .setup-group { padding-block: 25px; } }
+  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } }
+</style>

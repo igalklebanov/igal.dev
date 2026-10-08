@@ -1,6 +1,7 @@
 ---
 import Page from '../layouts/Page.astro';
 import PageOutro from '../components/PageOutro.astro';
+import MySetup from '../components/MySetup.astro';
 import ProfileLinks from '../components/ProfileLinks.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/igal-sunglasses.png';
@@ -24,6 +25,7 @@ import OpenTofuExperience from '../components/OpenTofuExperience.astro';
     </section>
     </div>
 
+    <div class="main-content">
     <section id="work" class="work" aria-labelledby="work-heading">
       <h2 id="work-heading">Open source</h2>
       <ul class="project-list">
@@ -34,6 +36,8 @@ import OpenTofuExperience from '../components/OpenTofuExperience.astro';
         <li class="project"><span class="project-number" aria-hidden="true">05</span><div class="project-body"><OpenTofuExperience /></div></li>
       </ul>
     </section>
+    <MySetup />
+    </div>
   </main>
   <PageOutro />
 </Page>
