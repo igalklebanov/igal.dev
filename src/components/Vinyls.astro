@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import blankFace from '../assets/vinyls/blank-face-lp.jpg';
+import chasingSummer from '../assets/vinyls/chasing-summer.jpg';
+import fantastic from '../assets/vinyls/fantastic-vol-2.jpg';
+import egoDeath from '../assets/vinyls/ego-death.jpg';
+import thingsFallApart from '../assets/vinyls/things-fall-apart.jpg';
+import awakenMyLove from '../assets/vinyls/awaken-my-love.jpg';
+import be from '../assets/vinyls/be.jpg';
+import aoiBionix from '../assets/vinyls/aoi-bionix.jpg';
+import meltMyEyez from '../assets/vinyls/melt-my-eyez.jpg';
+import newAmerykah from '../assets/vinyls/new-amerykah-part-one.jpg';
+import lateRegistration from '../assets/vinyls/late-registration.jpg';
+import ventura from '../assets/vinyls/ventura.jpg';
+import diamondsAndFreaks from '../assets/vinyls/diamonds-and-freaks.jpg';
+import beatsRhymesAndLife from '../assets/vinyls/beats-rhymes-and-life.jpg';
+import midnightMarauders from '../assets/vinyls/midnight-marauders.jpg';
+import theLowEndTheory from '../assets/vinyls/the-low-end-theory.jpg';
+import blackMessiah from '../assets/vinyls/black-messiah.jpg';
+import voodoo from '../assets/vinyls/voodoo.jpg';
+import process from '../assets/vinyls/process.jpg';
+import stankonia from '../assets/vinyls/stankonia.jpg';
+import blackOnBothSides from '../assets/vinyls/black-on-both-sides.jpg';
+import candydrip from '../assets/vinyls/candydrip.jpg';
+import paintedDeluxe from '../assets/vinyls/painted-deluxe.jpg';
+import mrMorale from '../assets/vinyls/mr-morale.jpg';
+import toPimpAButterfly from '../assets/vinyls/to-pimp-a-butterfly.jpg';
+import goodKidMaadCity from '../assets/vinyls/good-kid-maad-city.jpg';
+import bubba from '../assets/vinyls/bubba.jpg';
+import lahai from '../assets/vinyls/lahai.jpg';
+import ninetyNinePointNine from '../assets/vinyls/99-9.jpg';
+
+const records = [
+  { title: 'Blank Face LP', artist: 'ScHoolboy Q', cover: blankFace },
+  { title: 'Chasing Summer', artist: 'SiR', cover: chasingSummer },
+  { title: 'Fantastic, Vol. 2', artist: 'Slum Village', cover: fantastic },
+  { title: 'Ego Death', artist: 'The Internet', cover: egoDeath },
+  { title: 'Things Fall Apart', artist: 'The Roots', cover: thingsFallApart },
+  { title: '“Awaken, My Love!”', artist: 'Childish Gambino', cover: awakenMyLove },
+  { title: 'Be', artist: 'Common', cover: be },
+  { title: 'AOI: Bionix', artist: 'De La Soul', cover: aoiBionix },
+  { title: 'Melt My Eyez See Your Future', artist: 'Denzel Curry', cover: meltMyEyez },
+  { title: 'New Amerykah Part One (4th World War)', artist: 'Erykah Badu', cover: newAmerykah },
+  { title: 'Late Registration', artist: 'Kanye West', cover: lateRegistration },
+  { title: 'Ventura', artist: 'Anderson .Paak', cover: ventura },
+  { title: 'DIAMONDS & FREAKS', artist: 'BLK ODYSSY', cover: diamondsAndFreaks },
+  { title: 'Beats, Rhymes & Life', artist: 'A Tribe Called Quest', cover: beatsRhymesAndLife },
+  { title: 'Midnight Marauders', artist: 'A Tribe Called Quest', cover: midnightMarauders },
+  { title: 'The Low End Theory', artist: 'A Tribe Called Quest', cover: theLowEndTheory },
+  { title: 'Black Messiah', artist: 'D’Angelo and The Vanguard', cover: blackMessiah },
+  { title: 'Voodoo', artist: 'D’Angelo', cover: voodoo },
+  { title: 'Process', artist: 'Sampha', cover: process },
+  { title: 'Stankonia', artist: 'Outkast', cover: stankonia },
+  { title: 'Black on Both Sides', artist: 'Mos Def', cover: blackOnBothSides },
+  { title: 'Candydrip', artist: 'Lucky Daye', cover: candydrip },
+  { title: 'Painted (Deluxe Edition)', artist: 'Lucky Daye', cover: paintedDeluxe },
+  { title: 'Mr. Morale & The Big Steppers', artist: 'Kendrick Lamar', cover: mrMorale },
+  { title: 'To Pimp a Butterfly', artist: 'Kendrick Lamar', cover: toPimpAButterfly },
+  { title: 'good kid, m.A.A.d city', artist: 'Kendrick Lamar', cover: goodKidMaadCity },
+  { title: 'BUBBA', artist: 'KAYTRANADA', cover: bubba },
+  { title: 'Lahai', artist: 'Sampha', cover: lahai },
+  { title: '99.9%', artist: 'KAYTRANADA', cover: ninetyNinePointNine },
+];
+---
+
+<section id="vinyls" aria-labelledby="vinyls-heading">
+  <h2 id="vinyls-heading">Vinyls</h2>
+  <ul class="records">
+    {records.map(({ title, artist, cover }) => (
+      <li>
+        <Image
+          src={cover}
+          alt=""
+          width={240}
+          widths={[160, 240, 360, 480, 600]}
+          sizes="(max-width: 760px) calc((100vw - 60px) / 2), (max-width: 1000px) calc((100vw - 344px) / 2), (max-width: 1200px) calc((100vw - 464px) / 3), 246px"
+          format="webp"
+          quality={80}
+          loading="lazy"
+        />
+        <h3>{title}</h3>
+        <p>{artist}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  section { margin-top: 48px; }
+  .records { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 20px; padding-top: 28px; border-top: 1px solid var(--ink); }
+  li { min-width: 0; }
+  img { display: block; width: 100%; height: auto; aspect-ratio: 1; box-shadow: 0 2px 8px #0002; }
+  h3 { margin-top: 14px; font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.5; }
+  p { margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+  @media (max-width: 1000px) { .records { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { section { margin-top: 42px; } .records { padding-top: 25px; } }
+</style>
