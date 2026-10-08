@@ -9,15 +9,15 @@ const tools = [
   { name: 'Codex', role: 'Coding agent', href: 'https://openai.com/codex/' },
 ];
 const gear = [
-  { name: '2 × ASUS VP249QGR', detail: 'Monitors · 1080p · 144 Hz', href: 'https://www.amazon.com/dp/B083FMP35T' },
-  { name: 'Durgod Taurus K320', detail: 'Keyboard · White', href: 'https://www.amazon.com/dp/B07QDTRXVP' },
-  { name: 'Logitech MX518 Legendary', detail: 'Mouse', href: 'https://www.amazon.com/dp/B07NDVF9V7' },
-  { name: 'Razer Gigantus V2 3XL', detail: 'Desk mat · 120 × 55 cm', href: 'https://www.amazon.com/dp/B086RH28FW' },
-  { name: 'Sennheiser HD 6XX', detail: 'Headphones', href: 'https://www.amazon.com/dp/B08T123MCT' },
-  { name: 'Sony WF-1000XM6', detail: 'Earbuds · Black', href: 'https://www.amazon.com/dp/B0GF9ZNLWM' },
-  { name: 'Elgato Wave:3 MK.2', detail: 'Microphone', href: 'https://www.amazon.com/dp/B0GGYLFHPS' },
-  { name: 'Logitech C920', detail: 'Webcam', href: 'https://www.amazon.com/dp/B006JH8T3S' },
-  { name: 'Steelcase Amia', detail: 'Chair', href: 'https://www.amazon.com/dp/B00GBUQ14M' },
+  { name: '2 × ASUS VP249QGR', role: 'Monitors', detail: '1080p · 144 Hz', href: 'https://www.amazon.com/dp/B083FMP35T' },
+  { name: 'Durgod Taurus K320', role: 'Keyboard', detail: 'White', href: 'https://www.amazon.com/dp/B07QDTRXVP' },
+  { name: 'Logitech MX518 Legendary', role: 'Mouse', detail: '', href: 'https://www.amazon.com/dp/B07NDVF9V7' },
+  { name: 'Razer Gigantus V2 3XL', role: 'Desk mat', detail: '120 × 55 cm', href: 'https://www.amazon.com/dp/B086RH28FW' },
+  { name: 'Sennheiser HD 6XX', role: 'Headphones', detail: '', href: 'https://www.amazon.com/dp/B08T123MCT' },
+  { name: 'Sony WF-1000XM6', role: 'Earbuds', detail: 'Black', href: 'https://www.amazon.com/dp/B0GF9ZNLWM' },
+  { name: 'Elgato Wave:3 MK.2', role: 'Microphone', detail: '', href: 'https://www.amazon.com/dp/B0GGYLFHPS' },
+  { name: 'Logitech C920', role: 'Webcam', detail: '', href: 'https://www.amazon.com/dp/B006JH8T3S' },
+  { name: 'Steelcase Amia', role: 'Chair', detail: '', href: 'https://www.amazon.com/dp/B00GBUQ14M' },
 ];
 ---
 
@@ -27,12 +27,14 @@ const gear = [
     <h3>Devices</h3>
     <dl>
       <div>
-        <dt>MacBook Pro 14″ <span>2023 · Space Black</span></dt>
+        <dt>Laptop</dt>
+        <dd>MacBook Pro 14″ · 2023 · Space Black</dd>
         <dd>Apple M3 Pro · 18 GB memory · 512 GB SSD</dd>
         <dd>11-core CPU · 14-core GPU</dd>
       </div>
       <div>
-        <dt>Samsung Galaxy S25 Ultra</dt>
+        <dt>Phone</dt>
+        <dd>Samsung Galaxy S25 Ultra</dd>
         <dd>Titanium Black · 12 GB memory</dd>
         <dd>SM-S938B/DS</dd>
       </div>
@@ -43,8 +45,8 @@ const gear = [
     <dl>
       {tools.map(({ name, role, href }) => (
         <div>
-          <dt><a href={href} target="_blank" rel="noopener noreferrer">{name}</a></dt>
-          <dd>{role}</dd>
+          <dt>{role}</dt>
+          <dd><a href={href} target="_blank" rel="noopener noreferrer">{name}</a></dd>
         </div>
       ))}
     </dl>
@@ -52,10 +54,11 @@ const gear = [
   <div class="setup-group">
     <h3>Desk &amp; gear</h3>
     <dl>
-      {gear.map(({ name, detail, href }) => (
+      {gear.map(({ name, role, detail, href }) => (
         <div>
-          <dt>{href ? <a href={href} target="_blank" rel="noopener noreferrer">{name}</a> : name}</dt>
-          <dd>{detail}</dd>
+          <dt>{role}</dt>
+          <dd>{href ? <a href={href} target="_blank" rel="noopener noreferrer">{name}</a> : name}</dd>
+          {detail && <dd>{detail}</dd>}
         </div>
       ))}
     </dl>
@@ -69,9 +72,8 @@ const gear = [
   h3 { margin-bottom: 22px; }
   dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 0; }
   dt { font-size: 15px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
-  dt span { margin-left: 6px; color: var(--muted); font-size: 12px; font-weight: 400; }
-  dt a { text-decoration-color: var(--line); }
-  dd { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  dd a { text-decoration-color: var(--line); }
+  dd { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
   @media (min-width: 761px) and (max-width: 1000px) { dl { grid-template-columns: 1fr; } }
   @media (max-width: 760px) { section { margin-top: 42px; } .setup-group { padding-block: 25px; } }
   @media (max-width: 420px) { dl { grid-template-columns: 1fr; } }
