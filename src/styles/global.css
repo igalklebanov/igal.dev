@@ -19,6 +19,8 @@
   --dark-muted: #a3a3a3;
   --dark-accent: #ff9e73;
   --dark-line: #353535;
+  --header-height: 96px;
+  scroll-padding-top: var(--header-height);
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-family: var(--sans);
   color: var(--ink);
@@ -60,7 +62,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .page { width: min(100% - 80px, 1120px); margin-inline: auto; }
 .skip-link { position: absolute; z-index: 10; left: 24px; top: -80px; padding: 12px; background: var(--ink); color: var(--paper); }
 .skip-link:focus { top: 12px; }
-.site-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-block: 26px; }
+.site-header { position: sticky; top: 0; z-index: 5; background: var(--paper); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-block: 26px; }
+.site-header[data-scrolled] { box-shadow: inset 0 -1px 0 var(--line); }
 .header-actions { display: flex; align-items: center; gap: 24px; }
 .site-name { display: inline-flex; align-items: center; flex-shrink: 0; text-decoration: none; }
 .site-name img { display: block; width: 140px; height: 42px; }
@@ -68,7 +71,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .site-header nav a { text-decoration: none; white-space: nowrap; }
 
 main { display: grid; grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 64px; padding-block: 48px 80px; }
-.profile { position: sticky; top: 32px; }
+.profile { position: sticky; top: calc(var(--header-height) + 32px); }
 .intro { position: relative; margin-top: 32px; padding: 0 26px 30px; color: #211713; background: var(--signal); }
 .profile-portrait { display: block; height: 218px; margin: -32px -26px 22px; overflow: hidden; }
 .profile-portrait img { display: block; width: 100%; height: auto; }
@@ -102,6 +105,7 @@ h3 a span { display: inline-block; margin-left: 5px; color: var(--accent); font-
   h3 { font-size: 24px; }
 }
 @media (max-width: 760px) {
+  :root { --header-height: 80px; }
   .page { width: calc(100% - 40px); }
   .site-header { padding-block: 18px; gap: 12px; }
   .site-name img { width: 112px; height: auto; }
@@ -118,6 +122,7 @@ h3 a span { display: inline-block; margin-left: 5px; color: var(--accent); font-
   h3 { font-size: 23px; }
 }
 @media (max-width: 360px) {
+  :root { --header-height: 112px; }
   .header-actions { gap: 10px; }
   .site-header nav { gap: 10px; font-size: 11px; }
   .site-name img { width: 96px; }

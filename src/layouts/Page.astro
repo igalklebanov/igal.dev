@@ -107,6 +107,20 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           <ThemeControl />
         </div>
       </header>
+      <script is:inline>
+        (() => {
+          const header = document.querySelector('.site-header');
+          const updateHeight = () => {
+            document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+          };
+          const updateScroll = () => header.toggleAttribute('data-scrolled', window.scrollY > 0);
+          updateHeight();
+          updateScroll();
+          new ResizeObserver(updateHeight).observe(header);
+          window.addEventListener('scroll', updateScroll, { passive: true });
+          window.addEventListener('pageshow', updateScroll);
+        })();
+      </script>
       <slot />
 
     </div>
