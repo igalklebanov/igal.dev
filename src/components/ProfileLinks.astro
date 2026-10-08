@@ -69,7 +69,7 @@ const links = [
 
 <style>
   .profile-links { margin-top: 24px; padding-top: 12px; border-top: 1px solid #21171340; }
-  ul { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); margin: 0; padding: 0; list-style: none; }
+  ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px 12px; margin: 0; padding: 0; list-style: none; }
   a { display: flex; align-items: center; justify-content: center; height: 44px; color: #211713; border-radius: 4px; text-decoration: none; }
   a:hover { color: #211713; background: #21171314; }
   a:focus-visible { outline: 2px solid #211713; outline-offset: 2px; }
