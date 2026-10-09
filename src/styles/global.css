@@ -80,7 +80,7 @@ h1 { font-size: 27px; line-height: 1.12; letter-spacing: -1.1px; font-weight: 75
 .intro a:hover { color: #211713; text-decoration-thickness: 3px; }
 .intro a:focus-visible { outline-color: #211713; }
 
-.main-content, .work { min-width: 0; }
+.main-content, .open-source { min-width: 0; }
 h2 { margin-top: 2px; padding-bottom: 19px; font-size: 12px; line-height: 1.5; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .project { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 18px; padding-block: 28px 32px; border-top: 1px solid var(--line); }
 .project:first-child { border-top-color: var(--ink); }
