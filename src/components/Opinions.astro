@@ -1,0 +1,149 @@
+---
+const opinions = [
+  {
+    "topic": "Learning in public",
+    "text": "i do have strong opinions here and there, and i don't shy away from testing them, or my intuition/instincts about things, by stating/writing them as a way to learn/adjust if and when i get pushback. i do admit being wrong & show gratitude.",
+    "href": "https://bsky.app/profile/igal.dev/post/3lapfel7fls2q",
+    "date": "Nov 2024",
+    "datetime": "2024-11"
+  },
+  {
+    "topic": "Tests",
+    "text": "i think there needs to be a culture of test removal/refactor, more than simply add tests everywhere. bad tests kill velocity.",
+    "href": "https://x.com/igalklebanov/status/1984944873942720969",
+    "date": "Nov 2025",
+    "datetime": "2025-11"
+  },
+  {
+    "topic": "Testing real systems",
+    "text": "purist hat on. the one major thing you cannot test with pglite, is transaction isolation. if you have a distributed system that relies heavily on that, you can't avoid spinning up a full-blown postgres instance. it's similar to unit tests, you cannot rely only on unit tests.",
+    "href": "https://x.com/igalklebanov/status/1923332596332732658",
+    "date": "May 2025",
+    "datetime": "2025-05"
+  },
+  {
+    "topic": "Coding agents",
+    "text": "slop coding doesn't decrease org costs when a code review now takes waaay longer because the slop development environment is touching things for no good reason, you have to question everything, and the submitter has no recall why things were changed/added. change my mind.",
+    "href": "https://x.com/igalklebanov/status/1905357322618372260",
+    "date": "Mar 2025",
+    "datetime": "2025-03"
+  },
+  {
+    "topic": "Abstractions",
+    "text": "people obssessing over DRY this DRY that like they've read \"clean code\" yesterday, need to hear this. Premature abstractions are a road full of pain, more often than not. And nope, you're not smarter than the good people that maintain the library you're about to wrap.",
+    "href": "https://x.com/igalklebanov/status/1796910717217468872",
+    "date": "Jun 2024",
+    "datetime": "2024-06"
+  },
+  {
+    "topic": "Application code",
+    "text": "The more I got involved with library TS code, the less I wanted to do non-basic TS code in applications. A lot of people go ham with complex shit in application code to scratch an itch, they don't have an outlet.",
+    "href": "https://x.com/igalklebanov/status/1655706229740642305",
+    "date": "May 2023",
+    "datetime": "2023-05"
+  },
+  {
+    "topic": "Contracts",
+    "text": "Return types are a must on exported functions and public class methods. Contracts are important, both for consumers and for maintenance of given functionality. Internals can be inferred or defined, depends on the complexity of the inferred type.",
+    "href": "https://x.com/igalklebanov/status/1621528728118480897",
+    "date": "Feb 2023",
+    "datetime": "2023-02"
+  },
+  {
+    "topic": "Users first",
+    "text": "Do yourself a favor, learn SQL. It's not as hard as some authors/vendors make you believe. Optimize for app's User eXperience, not Developer eXperience (it's also important, not as important). Pick predictable tools that empower you & get out the way.",
+    "href": "https://x.com/igalklebanov/status/1667538491226324993",
+    "date": "Jun 2023",
+    "datetime": "2023-06"
+  },
+  {
+    "topic": "Hiring",
+    "text": "when i interview people for an application-level typescript role, i wanna see application-level stuff. no wizardry. i wanna see you write some very maintainable, simple and type-safe code. ecosystem awareness. designs with extensibility in mind.",
+    "href": "https://bsky.app/profile/igal.dev/post/3lak7eho7cs2w",
+    "date": "Nov 2024",
+    "datetime": "2024-11"
+  },
+  {
+    "topic": "Judgment",
+    "text": "be pragmatic. know when to steer and teach by example. know when to take your hands off the wheel. its about type of work and feel. don't ever lose feel.",
+    "href": "https://x.com/igalklebanov/status/2077624803150778781",
+    "date": "Jul 2026",
+    "datetime": "2026-07"
+  },
+  {
+    "topic": "Boundaries",
+    "text": "the boundaries should always be explicitly typed and validated. this was true before agents. docs rot/drift/not tell the exact story. this was true before agents.",
+    "href": "https://x.com/igalklebanov/status/2019688845449756707",
+    "date": "Feb 2026",
+    "datetime": "2026-02"
+  },
+  {
+    "topic": "Migrations",
+    "text": "schemas and migrations should be boring, predictable and decoupled from application code.",
+    "href": "https://x.com/igalklebanov/status/1656188101524373506",
+    "date": "May 2023",
+    "datetime": "2023-05"
+  },
+  {
+    "topic": "Package trust",
+    "text": "trusted publishing is nice, but not enough. we need trusted maintaining, trusted process. something like `pnpm`'s `trustPolicy: no-downgrade` option but for not trusting packages with insecure repositories/processes.",
+    "href": "https://x.com/igalklebanov/status/2054032371171606624",
+    "date": "May 2026",
+    "datetime": "2026-05"
+  }
+];
+---
+
+<section id="random-takes" aria-labelledby="random-takes-heading">
+  <div class="opinions-heading">
+    <h2 id="random-takes-heading">Random takes</h2>
+    <p>Posts and replies, in my own words.</p>
+  </div>
+  <ol class="opinion-list">
+    {opinions.map(({ topic, text, href, date, datetime }, index) => (
+      <li class="opinion">
+        <div class="opinion-topline">
+          <span class="opinion-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <span class="opinion-topic">{topic}</span>
+        </div>
+        <blockquote>{text}</blockquote>
+        <div class="opinion-footer">
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Read original ${topic.toLowerCase()} post on ${href.startsWith('https://bsky.app/') ? 'Bluesky' : 'X'} in a new tab`}>Original post <span aria-hidden="true">↗</span></a>
+          <time datetime={datetime}>{date}</time>
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  section { margin-top: 48px; }
+  .opinions-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
+  .opinions-heading p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+  .opinion-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; border-top: 1px solid var(--ink); }
+  .opinion { display: flex; flex-direction: column; min-width: 0; padding: 24px 0 28px; border-bottom: 1px solid var(--line); }
+  .opinion:first-child { grid-column: 1 / -1; margin: 24px 0 0; padding: 28px 32px 30px; color: #211713; background: var(--signal); border-bottom: 0; transform: rotate(-1deg); }
+  .opinion-topline { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
+  .opinion-number { color: var(--accent); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .opinion-topic { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  blockquote { margin: 0; font-family: 'Source Serif', Georgia, serif; font-size: 20px; line-height: 1.5; text-wrap: pretty; overflow-wrap: anywhere; }
+  .opinion:first-child blockquote { max-width: 32ch; font-family: var(--sans); font-size: clamp(23px, 3vw, 30px); font-weight: 700; line-height: 1.23; letter-spacing: -.035em; }
+  .opinion:first-child .opinion-number, .opinion:first-child .opinion-topic { color: #211713; }
+  .opinion-footer { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 24px; font-size: 12px; }
+  .opinion-footer a { width: fit-content; text-decoration: none; border-bottom: 1px solid currentColor; }
+  .opinion-footer a:hover { color: var(--accent); }
+  .opinion-footer time { color: var(--muted); white-space: nowrap; }
+  .opinion:first-child .opinion-footer time, .opinion:first-child .opinion-footer a:hover { color: #211713; }
+  .opinion:first-child .opinion-footer a:focus-visible { outline-color: #211713; }
+  .opinion:first-child ::selection { color: var(--signal); background: #211713; }
+  @media (max-width: 1000px) {
+    .opinion-list { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 760px) {
+    section { margin-top: 42px; }
+    .opinion-list { margin-top: 6px; }
+    .opinion { padding-block: 22px 26px; }
+    .opinion:first-child { margin-top: 20px; padding: 24px 25px 26px; }
+    blockquote { font-size: 19px; }
+  }
+</style>

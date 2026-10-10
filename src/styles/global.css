@@ -110,7 +110,7 @@ h3 a span { display: inline-block; margin-left: 5px; color: var(--accent); font-
   .site-name { grid-column: 1; grid-row: 1; }
   .site-name img { width: 120px; height: auto; }
   .site-header > .theme-control { grid-column: 2; grid-row: 1; }
-  .site-header nav { grid-column: 1 / -1; grid-row: 2; gap: 24px; font-size: 13px; font-weight: 500; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: 10px; font-size: 13px; font-weight: 500; }
   .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; }
   main { grid-template-columns: minmax(0, 1fr); gap: 42px; padding-block: 28px 48px; }
   .profile { position: static; }
