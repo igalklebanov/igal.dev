@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#141414"/>
+  <path d="M0 0h20v630H0z" fill="#ff824a"/>
+  <rect x="770" y="54" width="390" height="522" rx="10" fill="#ff824a" transform="rotate(-1 965 315)"/>
+  <g transform="translate(130 273) scale(1.55)">
+    <rect width="280" height="84" rx="6" fill="#ff824a"/>
+    <g stroke="#211713" stroke-width="8" stroke-linecap="square" stroke-linejoin="round">
+      <path d="M22 34v20"/><path d="M62 44a12 12 0 1 1-24 0 12 12 0 0 1 24 0Zm0-10v29c0 7-4 10-11 10h-8"/>
+      <path d="M97 44a12 12 0 1 1-24 0 12 12 0 0 1 24 0Zm0-10v20"/><path d="M114 19v35"/>
+      <path d="M174 44a12 12 0 1 1-24 0 12 12 0 0 1 24 0Zm0-25v35"/>
+      <path d="M213 53c-3 3-6 4-11 4-7 0-12-5-12-13s5-12 12-12 12 5 12 12h-23"/><path d="m232 34 12 22 12-22"/>
+    </g>
+    <path d="M17.5 15.5h9v9h-9z" fill="#211713"/><circle cx="133" cy="53" r="5" fill="#211713"/>
+  </g>
+  <image href="og-subtitle.png" x="132" y="422" width="550" height="80"/>
+  <image href="igal-footer.png" x="770" y="54" width="390" height="522" preserveAspectRatio="xMidYMid meet"/>
+</svg>
